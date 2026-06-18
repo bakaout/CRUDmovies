@@ -24,7 +24,7 @@ const CustomerSchema = new Schema<ICustomer>({
     },
 },
 {
-    collection: 'customers', //nome do schema/collection no mongodb
+    collection: 'customers',//nome do schema/collection no mongodb
     timestamps: { //Mongoose adiciona automaticamente
         createdAt: 'created_at',
         updatedAt: 'updated_at'
