@@ -3,7 +3,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 //trocar no tsconfig de "commonJs" para "module" para podeer importar
 import {routes} from './routes.js'
-import { connectDatabase } from "./config/database"
+import { connectDatabase } from "./config/database.js";
 
 
 //instanciando o servidor
