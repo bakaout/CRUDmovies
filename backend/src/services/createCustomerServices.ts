@@ -1,10 +1,24 @@
-import mongoose from "mongoose";
+import Customer from "../models/customer";
+
+interface CreateCustomerProps{
+    name: string,
+    email: string
+}
 
 class CreateCustomerServices{
-    async execute(){
-        console.log("ROTA FOI CHAMADA")
+    async execute({name, email}: CreateCustomerProps){
+        
+    if(!name || !email){
+        throw new Error("Preencha todos os campos");
+    }
+    
+    const customer = await Customer.create({
+        name,
+        email,
+        status: true
+    })
 
-        return {ok: true}
+        return customer
     }
 }
 

@@ -9,7 +9,10 @@ class CustomerControllers {
 
         const customerServices = new CreateCustomerServices()//inicializando a classe que criei o serviço
 
-        const customer = await customerServices.execute()//recebendo o retorno do serviço
+       const customer = await customerServices.execute({
+        name,
+        email
+       })//recebendo o retorno do serviço
 
         reply.send(customer)//retornando o retorno do serviço para o front-end
     }

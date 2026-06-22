@@ -1,22 +1,32 @@
+import "dotenv/config";
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 //trocar no tsconfig de "commonJs" para "module" para podeer importar
 import {routes} from './routes.js'
+import { connectDatabase } from "./config/database"
 
 
 //instanciando o servidor
 const app = Fastify({ logger: true})
 
 const start = async () => {
-
-    await app.register(cors);
-    await app.register(routes);
-
     try {
-        await app.listen({ port: 3333 })
-    } catch (error) {
-        process.exit(1)//0sucesso, 1erro
-    }
-}
+        // Conectand ao MongoDB
+        await connectDatabase();
+        console.log("MongoDB conectado");
 
-start()
+        // Registra plugins e rotas
+        await app.register(cors);
+        await app.register(routes);
+
+        // servidos na porta 3333
+        await app.listen({ port: 3333 });
+
+        console.log("Servidor rodando na porta 3333");
+    } catch (error) {
+        console.error(error);
+        process.exit(1);
+    }
+};
+
+start();
