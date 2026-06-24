@@ -9,6 +9,14 @@ import { connectDatabase } from "./config/database.js";
 //instanciando o servidor
 const app = Fastify({ logger: true})
 
+//tratativa simples pra erro 400
+app.setErrorHandler((error: Error, request, reply) => {
+    reply.code(400).send({
+        message: error.message
+    });
+});
+
+
 const start = async () => {
     try {
         // Conectand ao MongoDB
