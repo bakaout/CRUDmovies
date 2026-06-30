@@ -1,11 +1,11 @@
 export default function App() {
-  return(
-    <div>
-      <h1 className="text-3x1 font-bold">MEU APP REACT</h1>
-      <h1 className="text-4xl font-bold text-blue-600">aHAHAHAHA</h1>
-    
+  return (
+    <div className="w-full min-h-screen bg-gray-900">
+      <main className = "my-10 w-full">
+        <h1 className = "text-white">Lucca um dia vai ser linda</h1>
+      </main>
     </div>
-  )
+  );
 }
 //ESTUDAR SOBBRE VITE
 //ESTUDAR SOBRE TAILWIND
