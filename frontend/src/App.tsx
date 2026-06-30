@@ -1,8 +1,25 @@
 export default function App() {
   return (
-    <div className="w-full min-h-screen bg-gray-900">
-      <main className = "my-10 w-full">
-        <h1 className = "text-white">Lucca um dia vai ser linda</h1>
+    <div className="w-full min-h-screen bg-gray-900 flex justify-center px-4">
+      <main className = "my-10 w-full md:max-w-2xl">
+        <h1 className = "text-4xl font-medium text-white">Movies</h1>
+
+        <form className="flex flex-col my-6">
+          <label className="font-medium text-white">Name:</label>
+          <input type="text" placeholder="write the name of the movie" className="w-full mb-5 p-2 rounded border-white border-1 text-white"/>
+
+          
+          <label className="font-medium text-white">Genre:</label>
+          <input type="text" placeholder="write the genre of the movie" className="w-full mb-5 p-2 rounded border-white border-1 text-white"/>
+
+          <input type="submit" value="cadastrar" className="cursor-pointer w-full p-2 bg-green-500 rounded font-medium text-white"></input>
+        </form>
+
+        <section className="flex flex-col">
+          <article className ="w-full bg-white rounded p-2">
+            <p><span className="font-medium">Name:</span> how trayning your dragon</p>
+          </article>
+        </section>
       </main>
     </div>
   );
