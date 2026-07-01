@@ -16,8 +16,15 @@ export default function App() {
         </form>
 
         <section className="flex flex-col">
-          <article className ="w-full bg-white rounded p-2">
+          <article className ="w-full relative bg-white rounded p-2">
+
             <p><span className="font-medium">Name:</span> how trayning your dragon</p>
+            <p><span className="font-medium">Genre:</span> how trayning your dragon</p>
+            <p><span className="font-medium">Nota:</span> how trayning your dragon</p>
+
+            <button className="text-black bg-red-500 w-7 h-7 flex items-center justify-center rounded-lg absolute right-0 top-8">🗑️
+            </button>
+
           </article>
         </section>
       </main>
